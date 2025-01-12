@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/db
+    username: root
+    password: root
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: true # keep Hibernate session opened until the web-request is over
+
+security:
+  jwt:
+    secret_key: baa160d870e6ca8ded21df8fc7ec206c7fadfaa8b55b583a1c3618f0ac487a3fe99acc1ae6b810db7b39d4b051db79b503c6d60fcf46e374c72846be470070918640285bddd3db6fd2aedf75cff43f7bbf0e38239f0e0c8944faf374596262f383bfb4f64017a01a733c72a4d8d584f65e3aeab838336819f0f50da36cf2e8bc54c5760ae835f96c8e66164a7d9f9a613cc6816fdafc404838b68fe2a9cc3be3ae7178a03dac0dd4f7cdf96a84f46103032234c447c034cdafa671f05f14245dc4d865cea0dc3ee2e3aec3a4b21fa1f316e2db25ca94ff855ee91676ec75309ec699b703692d17040dc6e86335d05669da05fee743a0d049a8591f596956172e1a6fd82635b6eab7ec9fbdb8326b288bdcb9dacfcf58b2913530a69e07a716f8352469b276f4376e50cc97b01cb4bf9349bdea874083dcbd321bd7a04dbc7174cc983ca8fad09d1dace5d325b6acd8acd65852946ce2cdc26a6717220ef4a42acd39473547b4dcc39590f479fca2de6211fe1353b51c4ec8c75054de2aaf580ea0969ed6bba11bb1d2e16636d4e87d17d072e13976e3bf7e70c927ab0ad71254d412ec1e7fe807583e08acce25586caa4ea83fc40eface18c3ce842e6f927b8e2c31c6601a507b028160ba5192e53aa7b09990d6b28be708286049c3184a6d95f93b5ff50ed6eae730b4f6d39bee67c6bed39cabe899d83676040bbdfebf5d1a
+    access_token_expiration: 3600000 # 1 hour
+    refresh_token_expiration: 86400000 # 1 day
+
+logging:
+  level:
+    org.springframework.security: DEBUG
